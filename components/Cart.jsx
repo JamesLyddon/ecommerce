@@ -59,9 +59,9 @@ const Cart = () => {
             cartItems.map((item, index) => (
               <div className="product" key={item._id}>
                 <img
-                  src={urlFor(item?.image[0])}
+                  src={urlFor(item.image[0])}
                   className="cart-product-image"
-                  alt=""
+                  alt="cart product image"
                 />
                 <div className="item-desc">
                   <div className="flex top">
@@ -90,7 +90,11 @@ const Cart = () => {
                         </span>
                       </p>
                     </div>
-                    <button type="button" className="remove-item" onClick={() => onRemove(item)}>
+                    <button
+                      type="button"
+                      className="remove-item"
+                      onClick={() => onRemove(item)}
+                    >
                       <TiDeleteOutline />
                     </button>
                   </div>
@@ -105,7 +109,7 @@ const Cart = () => {
               <h3>£{totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button className="btn" type="button" onClick="">
+              <button className="btn" type="button">
                 Pay with Stripe
               </button>
             </div>

@@ -25,7 +25,7 @@ const ProductDetails = ({ product, products }) => {
             />
           </div>
           <div className="small-images-container">
-            {image?.map((item, i) => (
+            {image.map((item, i) => (
               <img
                 key={i}
                 src={urlFor(item)}
@@ -73,7 +73,7 @@ const ProductDetails = ({ product, products }) => {
             >
               Add to Cart
             </button>
-            <button className="buy-now" type="button" onClick="">
+            <button className="buy-now" type="button">
               Buy Now
             </button>
           </div>
