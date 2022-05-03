@@ -1,4 +1,8 @@
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+import Stripe from "stripe";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -11,8 +15,8 @@ export default async function handler(req, res) {
         payment_method_types: ["card"],
         billing_address_collection: "auto",
         shipping_options: [
-          { shipping_rate: "shr_1KvJ4NEbzGnmgPlO3sEQCATx" },
           { shipping_rate: "shr_1KvJ6vEbzGnmgPlOHxB2OLwx" },
+          { shipping_rate: "shr_1KvJ4NEbzGnmgPlO3sEQCATx" },
         ],
         line_items: [
           {
