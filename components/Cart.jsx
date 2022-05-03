@@ -20,7 +20,7 @@ const Cart = () => {
     totalQuantities,
     cartItems,
     setShowCart,
-    toggleCartItemQuanitity,
+    toggleCartItemQuantity,
     onRemove,
   } = useStateContext();
 
