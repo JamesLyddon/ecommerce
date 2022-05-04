@@ -58,7 +58,6 @@ const Cart = () => {
           <span className="heading">Your cart</span>
           <span className="cart-num-items">({totalQuantities} items)</span>
         </button>
-        {/* if cart is empty */}
         {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
@@ -74,7 +73,6 @@ const Cart = () => {
             </Link>
           </div>
         )}
-        {/* if cart is not empty */}
         <div className="product-container">
           {cartItems.length >= 1 &&
             cartItems.map((item, index) => (
@@ -130,11 +128,7 @@ const Cart = () => {
               <h3>£{totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button
-                className="btn"
-                type="button"
-                onClick={() => handleCheckout()}
-              >
+              <button className="btn" type="button" onClick={handleCheckout}>
                 Pay with Stripe
               </button>
             </div>

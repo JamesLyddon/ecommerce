@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     console.log(req.body.cartItems);
     try {
-      const params = {
+      let params = {
         submit_type: "pay",
         mode: "payment",
         payment_method_types: ["card"],
