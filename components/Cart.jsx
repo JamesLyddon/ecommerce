@@ -38,7 +38,7 @@ const Cart = () => {
     if (response.statusCode === 500) return;
 
     const data = await response.json();
-    
+
     toast.loading("Redirecting...");
 
     stripe.redirectToCheckout({ sessionId: data.id });
@@ -130,7 +130,11 @@ const Cart = () => {
               <h3>£{totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button className="btn" type="button" onClick={handleCheckout}>
+              <button
+                className="btn"
+                type="button"
+                onClick={() => handleCheckout()}
+              >
                 Pay with Stripe
               </button>
             </div>
