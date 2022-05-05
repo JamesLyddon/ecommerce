@@ -2,7 +2,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    // console.log(req.body.cartItems);
+    console.log(req.body);
     try {
       let params = {
         submit_type: "pay",
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         line_items: [
           {
             // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-            price: "{{PRICE_ID}}",
+            price: "{{req.body[0].price}}",
             quantity: 1,
           },
         ],
