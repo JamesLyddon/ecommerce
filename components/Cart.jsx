@@ -27,34 +27,35 @@ const Cart = () => {
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
-    const response = await fetch('/api/stripe', {
-      method: 'POST',
+    const response = await fetch("/api/stripe", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(cartItems),
     });
 
-    if(response.statusCode === 500) return;
-    
-    const data = await response.json();
-    console.log(data)
-    toast.loading('Redirecting...');
+    if (response.statusCode === 500) return;
 
-    stripe.redirectToCheckout({ sessionId: data.id });
-  }
+    console.log(response);
+
+    // const data = await response.json();
+    // console.log(data)
+    // toast.loading('Redirecting...');
+
+    // stripe.redirectToCheckout({ sessionId: data.id });
+  };
 
   // const handleCheckout = async () => {
   //   const res = await fetch('../../api/pipe')
   //   const data = await res.json()
-  
+
   //   if (res.status !== 200) {
   //     throw new Error(data.message)
   //   }
 
   //   alert(data)
   // }
-
 
   return (
     <div className="cart-wrapper" ref={cartRef}>
