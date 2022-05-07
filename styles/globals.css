@@ -16,10 +16,6 @@ a {
   text-decoration: none;
 }
 
-.success {
-  color: green;
-}
-
 .main-container {
   max-width: 1400px;
   margin: auto;
